@@ -3,7 +3,23 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+document.addEventListener('click', handleClick)
 
+function handleClick(e){
+e.preventDefault()
+mimicServerCall()
+.then((data)=>{
+  console.log(data)
+ 
+})
+.catch(()=>{
+const errorMsg = document.querySelector("#modal")
+errorMsg.classList.remove("hidden")
+setTimeout(()=>{errorMsg.className="hidden"}, 3000)
+})
+
+}
+  
 
 
 
